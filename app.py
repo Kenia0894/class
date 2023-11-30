@@ -3,13 +3,12 @@ import requests
 from dotenv import load_dotenv,dotenv_values
 from sqlalchemy import create_engine, Integer, MetaData, Table, Column, String
 
-metaData=MetaData
+metaData=MetaData()
 
 #definicion de tablas
 cities= Table ('cities',metaData,
                Column('id',Integer (), primary_key=True, autoincrement=True),
-               Column('id',String(100),Nullable=True, unique=True) 
-               )
+               Column('nombre',String(100),nullable=True, unique=True) )
 
 
 config = dotenv_values('.env')
